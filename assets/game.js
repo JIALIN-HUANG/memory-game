@@ -4,6 +4,7 @@ const selectors = {
     moves: document.querySelector('.moves'),
     timer: document.querySelector('.timer'),
     start: document.querySelector('button'),
+    win: document.querySelector('.win')
 }
 
 const state = {
@@ -74,6 +75,9 @@ const startGame = () => {
 
     state.loop = setInterval(() => {
         state.totalTime++
+
+        selectors.moves.innerText = `${state.totalFlips} moves`
+        selectors.timer.innerText = `time: ${state.totalTime} sec`
     }, 1000)
 }
 
